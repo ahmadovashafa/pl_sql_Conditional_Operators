@@ -99,16 +99,15 @@ end if;
 END;
 
 --10)Task: Check if v_day represents a weekend (6 or 7) or a weekday (1-5) and print the result:
-
 DECLARE
-  v_day NUMBER := 3;
-  v_day_type VARCHAR2(10);
+    v_day NUMBER := 3;
+    v_day_type VARCHAR2(10);
 BEGIN
-  if v_day = 6 or v_day = 7 then
-    v_day_type := 'Weekend';
-  else
-    v_day_type := 'Weekday';
-  end if;
-
-  DBMS_OUTPUT.PUT_LINE(v_day_type);
+case 
+when v_day between 1 and 5 then 
+v_day_type:='weekday';
+when v_day between 6 and 7 then 
+v_day_type:='weekend';
+end case;
+ DBMS_OUTPUT.PUT_LINE(v_day_type);
 END;
