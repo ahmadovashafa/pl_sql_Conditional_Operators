@@ -1,0 +1,114 @@
+
+--1)Task: Check if v_num is positive and less than 100. If true, print "Valid Range":
+
+DECLARE
+  v_num NUMBER := 58;
+BEGIN
+  if v_num>0 and v_num<100 then
+  dbms_output.put_line ('Valid Range');
+end if;
+END;
+
+--2)Task: If v_str is "Active" and v_val is a multiple of 5, print "Valid Entry":
+
+DECLARE
+  v_str VARCHAR2(20) := 'Active';
+  v_val NUMBER := 10;
+BEGIN
+  if  v_str = 'Active' and mod(v_val ,5 )=0 then
+    dbms_output.put_line ('Valid Entry');
+    end if;
+END;
+
+--3)Task: Given v_status and v_active, if both are true, print "Fully Active":
+
+DECLARE
+  v_score NUMBER := 78;
+BEGIN
+  if v_score>85 then
+    dbms_output.put_line ('Excellent');
+        elsif   v_score>60 then
+    dbms_output.put_line ('Good');
+    else 
+        dbms_output.put_line ('Average');
+end if;
+END;
+
+--4)Task: Given v_status and v_active, if both are true, print "Fully Active":
+
+DECLARE
+  v_status BOOLEAN := TRUE;
+  v_active BOOLEAN := TRUE;
+BEGIN
+  if v_status= TRUE and v_active= TRUE then
+          dbms_output.put_line ('FullActive');
+end if;
+END;
+
+--5)Task: Determine if v_quantity is between 20 and 100. If true, print "Valid Quantity":
+
+DECLARE
+  v_quantity NUMBER := 50;
+BEGIN
+  if v_quantity between 20 and 100 then
+            dbms_output.put_line ('Valid Quantity');
+end if;
+END;
+
+
+--6)Task: If the length of v_text is between 5 and 15 characters, print "Valid Length":
+
+DECLARE
+  v_text VARCHAR2(50) := 'PL/SQL';
+BEGIN
+if length(v_text) >= 5 and length(v_text) <= 15 then
+           dbms_output.put_line  ('Valid Length');
+  END IF;
+END;
+
+--7)Task: Check if v_temp is less than 0 OR between 50 and 100. If true, print "Special Range":
+
+  declare
+  v_temp NUMBER := 55;
+BEGIN
+  if v_temp<0 or  (v_temp between 50 and 100 )then 
+              dbms_output.put_line ('Special Range');
+end if;
+END;
+
+
+--8)Task: Determine if v_code ends with "XYZ". If so, print "Code Valid":
+
+DECLARE
+  v_code VARCHAR2(8) := 'ABTXYZ';
+BEGIN
+  if  v_code like '%XYZ' then
+    dbms_output.put_line ('Code Valid');
+  END IF;
+END;
+
+--9)Task: If v_address is null, print "Address Required":
+
+DECLARE
+  v_address VARCHAR2(100);
+BEGIN
+  if v_address is null then 
+      dbms_output.put_line ('Address Required');
+end if;
+  
+END;
+
+--10)Task: Check if v_day represents a weekend (6 or 7) or a weekday (1-5) and print the result:
+
+DECLARE
+  v_day NUMBER := 3;
+  v_day_type VARCHAR2(10);
+BEGIN
+  if v_day = 6 or v_day = 7 then
+    v_day_type := 'Weekend';
+  else
+    v_day_type := 'Weekday';
+  end if;
+
+  DBMS_OUTPUT.PUT_LINE(v_day_type);
+END;
